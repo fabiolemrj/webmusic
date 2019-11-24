@@ -1,0 +1,54 @@
+<div class="uk-container">
+  <div class="uk-grid uk-margin-small-top">
+
+    <table
+      class="uk-table uk-table-striped uk-table-hover uk-table-divider"
+      *ngIf="_musics">
+      <caption>Lista de Musicas</caption>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Genero</th>
+          <th>Autores</th>
+          <th>
+            <button class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom">
+              <i class="fas fa-plus-square"></i>
+              add
+            </button>
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let music of _musics">
+
+          <td>{{music.Name}}</td>
+          <td>{{music.GenreDescription}}</td>
+          <td>
+            <button class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom">
+              <i class="fas fa-users"></i>
+            </button>
+          </td>
+          <td>
+            <button
+              class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom"
+              routerLink="/updatemusic/{{music.Id}}">
+              <i class="far fa-edit"></i>
+            </button>
+            <button
+              class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom"
+              routerLink="/deletemusic/{{music.Id}}">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!_musics">
+      <h3>Não existm registros!</h3>
+    </div>
+  </div>
+
+</div>

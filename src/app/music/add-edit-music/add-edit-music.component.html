@@ -1,0 +1,62 @@
+<div class="uk-container">
+
+  <!-- <app-loading *ngIf="busy"></app-loading> -->
+  <form  [formGroup]="form"  class="uk-form-horizontal uk-margin-large">
+    <div class="uk-card uk-card-body uk-box-shadow-small">
+      <h3 class="uk-card-title">Musica</h3>
+
+      <div class="uk-margin">
+        <label
+          class="uk-form-label"
+          for="form-horizontal-text ">
+          Name
+        </label>
+        <div class="uk-form-controls uk-width-1-2@s">
+          <input
+            class="uk-input uk-form-small"
+            formControlName="Name"
+            type="text"
+            placeholder="Name"
+            [ngClass]="{'uk-form-danger': (!form.controls.Name.valid && !form.controls.Name.pristine) }">
+        </div>
+      </div>
+
+      <div class="uk-margin">
+        <label
+          class="uk-form-label"
+          for="form-horizontal-text">
+          Code
+        </label>
+        <div class="uk-form-controls uk-width-1-2@s">
+          <input
+            class="uk-input uk-form-small "
+            formControlName="Code"
+            type="text"
+            placeholder="Code"
+            [ngClass]="{'uk-form-danger': (!form.controls.Code.valid && !form.controls.Code.pristine) }">
+        </div>
+      </div>
+     
+      <div class="uk-margin">
+        <label
+          class="uk-form-label"
+          for="form-horizontal-text">
+          Code
+        </label>
+        <div class="uk-form-controls uk-width-1-2@s">
+          <input
+            class="uk-input uk-form-small "
+            formControlName="Genre"
+            type="text"
+            placeholder="Genre"
+            [ngClass]="{'uk-form-danger': (!form.controls.Genre.valid && !form.controls.Genre.pristine) }">
+        </div>
+      </div>
+       <div class="uk-margin">
+            <button type="sumit" class="uk-button uk-button-large uk-button-default uk-margin-small-bottom" (click)="onSubmit()">Salvar</button>
+          <button type="button" class="uk-button uk-button-large uk-button-default uk-margin-small-bottom" (click)="onCancel()">Cancelar</button>
+       </div>
+    </div>
+  </form>
+
+</div>

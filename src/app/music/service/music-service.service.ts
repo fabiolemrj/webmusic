@@ -26,7 +26,7 @@ export class MusicServiceService {
   }
 
   update(music: Music) {    
-    return this.http.put(`${this._url}/${music.Id}`, music).pipe(take(1));
+    return this.http.put(`${this._url}`, music).pipe(take(1));
   }
 
   save(music: Music) {

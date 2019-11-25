@@ -28,4 +28,9 @@ export class ListMusicComponent implements OnInit {
     );
   }
 
+  onEdit(id){
+    
+    this.router.navigate(['/editmusic', id], { relativeTo: this.route });
+  }
+
 }

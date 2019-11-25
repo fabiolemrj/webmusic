@@ -1,9 +1,7 @@
 <div class="uk-container">
   <div class="uk-grid uk-margin-small-top">
 
-    <table
-      class="uk-table uk-table-striped uk-table-hover uk-table-divider"
-      *ngIf="_musics">
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-divider"  *ngIf="_musics">
       <caption>Lista de Musicas</caption>
       <thead>
         <tr>
@@ -11,7 +9,8 @@
           <th>Genero</th>
           <th>Autores</th>
           <th>
-            <button class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom">
+            <button class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom"
+            [routerLink]="['/addmusic']" routerLinkActive="router-link-active" >
               <i class="fas fa-plus-square"></i>
               add
             </button>
@@ -32,7 +31,7 @@
           <td>
             <button
               class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom"
-              routerLink="/updatemusic/{{music.Id}}">
+              (click)="onEdit(music.Id)">
               <i class="far fa-edit"></i>
             </button>
             <button
@@ -46,9 +45,7 @@
         </tr>
       </tbody>
     </table>
-    <div *ngIf="!_musics">
-      <h3>Não existm registros!</h3>
-    </div>
+    
   </div>
 
 </div>

@@ -10,6 +10,7 @@ import { FramePageComponent } from './shared/framepage/frame-page/frame-page.com
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { MainComponent } from './shared/main/main.component';
 import { ListMusicComponent } from './music/list-music/list-music.component';
+import { AddEditMusicComponent } from './music/add-edit-music/add-edit-music.component';
 
 
 
@@ -19,7 +20,8 @@ import { ListMusicComponent } from './music/list-music/list-music.component';
     FramePageComponent,
     NavBarComponent,
     MainComponent,
-    ListMusicComponent
+    ListMusicComponent,
+    AddEditMusicComponent
   ],
   imports: [
     BrowserModule,

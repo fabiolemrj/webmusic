@@ -21,6 +21,11 @@ export class MusicServiceService {
     return this.http.get<Music>(`${this._url}/getbyid/${id}`).pipe(take(1));
   }
 
+  getMusicbyname(name: string) {
+    return this.http.get<Music[]>(`${this._url}/getbyname/${name}`).pipe(take(1));
+  }
+
+
   create(music: Music) {    
     return this.http.post(this._url, music).pipe(take(1));
   }
@@ -30,6 +35,7 @@ export class MusicServiceService {
   }
 
   save(music: Music) {
+    // tslint:disable-next-line: triple-equals
     if (music.Id) {
       return this.update(music);
     } else {

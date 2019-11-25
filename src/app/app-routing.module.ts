@@ -13,8 +13,10 @@ const routes: Routes = [
   {path:'', component:FramePageComponent,
 children:[{path:'',component:MainComponent},
 {path:'music',component:ListMusicComponent},
-  { path:'editmusic/:id', component:AddEditMusicComponent,resolve:{music: MusicResolverGuard}}]},
-  {path:'addmusic', component:AddEditMusicComponent, resolve:{music:MusicResolverGuard}}
+  { path:'editmusic/:id', component:AddEditMusicComponent,resolve:{music: MusicResolverGuard}},
+  { path: 'addmusic', component: AddEditMusicComponent, resolve: { music: MusicResolverGuard } }
+]},
+
 ];
 
 @NgModule({

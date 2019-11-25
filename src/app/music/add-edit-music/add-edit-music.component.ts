@@ -55,8 +55,8 @@ export class AddEditMusicComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     if (this.form.valid) {
-      console.log('submit');
-
+      console.log(this.form.value);
+      
       this.service.save(this.form.value).subscribe(
         success=>{
           this.location.back();

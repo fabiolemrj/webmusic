@@ -1,5 +1,6 @@
+import { FormGroup } from '@angular/forms';
 import { MusicServiceService } from './../service/music-service.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Music } from '../model/music-model';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from "@angular/router";
@@ -14,15 +15,21 @@ export class ListMusicComponent implements OnInit {
   public musics: Observable<Music[]> = null;
   public _musics: Music[] = [];
 
+
   constructor(private service: MusicServiceService, private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.load();
+    this.load("");
   }
 
-  load(){
-    this.musics = this.service.getAll();
+  load(pesq:string){
+    if(!pesq){
+      alert(pesq);
+      pesq = ' ';
+    }
+
+    this.musics = this.service.getMusicbyname(pesq);
     this.musics.subscribe(
       resp =>(this._musics = resp)
     );

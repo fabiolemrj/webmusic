@@ -5,6 +5,7 @@
     <div class="uk-card uk-card-body uk-box-shadow-small">
       <h3 class="uk-card-title">Musica</h3>
 
+      <input type="hidden" formControlName="Id" >
       <div class="uk-margin">
         <label
           class="uk-form-label"
@@ -44,12 +45,13 @@
           Code
         </label>
         <div class="uk-form-controls uk-width-1-2@s">
-          <input
-            class="uk-input uk-form-small "
-            formControlName="Genre"
-            type="text"
-            placeholder="Genre"
-            [ngClass]="{'uk-form-danger': (!form.controls.Genre.valid && !form.controls.Genre.pristine) }">
+              <select class="uk-select" id="form-stacked-select" formControlName="Genre">
+                <option value="1">Pop</option>
+                 <option value="2">Rock</option>
+                <option value="3">Gospel</option>
+                    <option value="4">MPB</option>
+                        <option value="5">Other</option>
+            </select>
         </div>
       </div>
        <div class="uk-margin">
